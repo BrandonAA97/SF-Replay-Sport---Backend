@@ -1,21 +1,38 @@
 package SFRS.SF_Replay_Sport.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import SFRS.SF_Replay_Sport.models.Dtos.VideoDto;
+import SFRS.SF_Replay_Sport.models.Dtos.VideoRequest;
+import SFRS.SF_Replay_Sport.service.VideoService;
+import lombok.RequiredArgsConstructor;
 
-
-import SFRS.SF_Replay_Sport.repositories.sfrsRepositories;
-
+@RequiredArgsConstructor
 @RestController // para poder manejar solicitudes HTTP 
-@RequestMapping("")
+@RequestMapping("/api/v1")
 @CrossOrigin (origins = "http:/localhost:4200")
 public class sfrsControllers {
 
- @Autowired
-    private sfrsRepositories repositories; //para conectarse a la base de d y atender las peticiones
+
     
-    
+    private final VideoService videoService;
+    @PostMapping("/add")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addVideo(@RequestBody VideoRequest videoRequest){
+        this.videoService.addVideo(videoRequest);
+    }
+    @GetMapping("/all")
+    @ResponseStatus(HttpStatus.OK)
+    public List<VideoDto> getAllVideos(){
+        return this.videoService.getAllVideos();
+    }
 }
