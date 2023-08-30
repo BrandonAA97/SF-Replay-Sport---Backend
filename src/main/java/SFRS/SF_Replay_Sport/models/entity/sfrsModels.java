@@ -1,4 +1,4 @@
-package SFRS.SF_Replay_Sport.models;
+package SFRS.SF_Replay_Sport.models.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "sfrs")
+@Table(name = "usuarios")
 public class sfrsModels {
 
     @Id
@@ -30,7 +30,7 @@ public class sfrsModels {
     @Column(length = 60, nullable = false, unique = true)
     private String correo; //Correo del Usuario. Es Unico
     
-
+    
     
 
 }

@@ -7,7 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,19 +15,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "videos")
-@Builder
-public class Video{
+@Table(name = "categoria")
+public class categoria {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @Column(length = 45, nullable = false, unique = true)
-    private String name;
-    
+
     @Column(length = 45, nullable = false)
-    private String categoria_nombre;//nombre de la categoria que pertenece
+    private String nombre_categoria; //Nombre de la categoria
     
-    @Column(length = 255)
-    private String url;
+    
+
+
 }

@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class VideoRequest {
+    
     private String name;
+    private String nombre_categoria;
     private String url;
 }
