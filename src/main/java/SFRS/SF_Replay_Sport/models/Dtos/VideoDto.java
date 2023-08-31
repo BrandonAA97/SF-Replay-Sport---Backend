@@ -12,6 +12,6 @@ public class VideoDto {
     
     private Long id;
     private String name;
-    private String nombre_categoria;
+    private String categoria_nombre;
     private String url;
 }

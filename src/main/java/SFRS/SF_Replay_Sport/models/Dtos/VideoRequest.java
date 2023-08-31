@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 public class VideoRequest {
     
     private String name;
-    private String nombre_categoria;
+    private String categoria_nombre;
     private String url;
 }

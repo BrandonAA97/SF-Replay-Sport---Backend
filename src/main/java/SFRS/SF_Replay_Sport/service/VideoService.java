@@ -9,7 +9,6 @@ import SFRS.SF_Replay_Sport.models.Dtos.VideoRequest;
 import SFRS.SF_Replay_Sport.models.entity.Video;
 import SFRS.SF_Replay_Sport.repositories.VideoRepo;
 import lombok.RequiredArgsConstructor;
-import lombok.var;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
@@ -22,6 +21,7 @@ public class VideoService {
             Video video = Video.builder()
             .name(videoRequest.getName())
             .url(videoRequest.getUrl())
+            .categoria_nombre(videoRequest.getCategoria_nombre())
             .build();
         videoRepo.save(video);
 
@@ -37,6 +37,7 @@ public class VideoService {
         .id(video.getId())
         .name(video.getName())
         .url(video.getUrl())
+        .categoria_nombre(video.getCategoria_nombre())
         .build();
     }
 }
