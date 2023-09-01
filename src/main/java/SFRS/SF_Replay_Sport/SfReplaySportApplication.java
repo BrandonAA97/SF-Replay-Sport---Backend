@@ -8,6 +8,7 @@ public class SfReplaySportApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SfReplaySportApplication.class, args);
+		
 	}
 
 }
