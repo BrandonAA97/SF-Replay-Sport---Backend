@@ -7,5 +7,5 @@ import SFRS.SF_Replay_Sport.models.entity.Categoria;
 
 public interface CategoriaRepo extends JpaRepository<Categoria, Long>{
 
-    
+   
 }

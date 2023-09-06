@@ -26,7 +26,7 @@ public class Video{
     private String name;
     
     @Column(length = 45, nullable = false)
-    private String categoria_nombre;//nombre de la categoria que pertenece
+    private String categoria;//nombre de la categoria que pertenece
     
     @Column(length = 255)
     private String url;

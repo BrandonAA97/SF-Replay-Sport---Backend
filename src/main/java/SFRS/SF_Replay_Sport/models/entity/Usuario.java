@@ -19,6 +19,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Usuario {
 
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
@@ -33,7 +34,7 @@ public class Usuario {
     @Column(length = 60, nullable = false, unique = true)
     private String correo; //Correo del Usuario. Es Unico
     
-    
+   
     
 
 }

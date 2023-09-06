@@ -21,7 +21,7 @@ public class VideoService {
             Video video = Video.builder()
             .name(videoRequest.getName())
             .url(videoRequest.getUrl())
-            .categoria_nombre(videoRequest.getCategoria_nombre())
+            .categoria(videoRequest.getCategoria_nombre())
             .build();
         videoRepo.save(video);
 
@@ -37,7 +37,7 @@ public class VideoService {
         .id(video.getId())
         .name(video.getName())
         .url(video.getUrl())
-        .categoria_nombre(video.getCategoria_nombre())
+        .categoria_nombre(video.getCategoria())
         .build();
     }
 }
