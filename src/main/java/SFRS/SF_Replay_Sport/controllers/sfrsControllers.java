@@ -27,7 +27,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @RestController // para poder manejar solicitudes HTTP 
 @RequestMapping("/api/v1")
-@CrossOrigin (origins = "http:/localhost:4200")
+@CrossOrigin (origins = "http://localhost:4200")
 public class sfrsControllers {
 
 
