@@ -22,8 +22,14 @@ public class Video{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(length = 45, nullable = false, unique = true)
-    private String name;
+    @Column(length = 255, nullable = false, unique = true)
+    private String titulo;
+    
+    @Column(length = 255, nullable = false)
+    private String subtitulo;
+
+    @Column(length = 255, nullable = true)
+    private String image;
     
     @Column(length = 45, nullable = false)
     private String categoria;//nombre de la categoria que pertenece

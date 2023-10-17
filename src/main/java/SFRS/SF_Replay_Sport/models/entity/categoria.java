@@ -33,7 +33,7 @@ public class Categoria {
     
     
     // @OneToMany(targetEntity = Video.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    // private List<Video> videos;
+    //  private List<Video> videos;
 
     
 

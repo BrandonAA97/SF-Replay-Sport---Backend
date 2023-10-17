@@ -11,7 +11,9 @@ import lombok.NoArgsConstructor;
 public class VideoDto {
     
     private Long id;
-    private String name;
-    private String categoria_nombre;
+    private String titulo;
+    private String subtitulo;
+    private String image;
+    private String categoria;
     private String url;
 }
