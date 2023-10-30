@@ -30,7 +30,7 @@ import SFRS.SF_Replay_Sport.models.entity.Usuario;
 import SFRS.SF_Replay_Sport.models.entity.Video;
 import SFRS.SF_Replay_Sport.service.UsuarioService;
 import SFRS.SF_Replay_Sport.service.VideoService;
-import jakarta.servlet.http.HttpServletResponse;
+
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -82,13 +82,13 @@ public class sfrsControllers {
     public Video findVideoById(@PathVariable Long id){
          return this.videoService.findVideoById(id).getBody();
 } 
-    @GetMapping("/find/videosUrl/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public String findUrlById(@PathVariable Long id){
-        Video video = this.videoService.findVideoById(id).getBody();
-        String url = "https://localhost:8080/" + video.getUrl();
-        return url;
-} 
+//     @GetMapping("/find/videosUrl/{id}")
+//     @ResponseStatus(HttpStatus.OK)
+//     public String findUrlById(@PathVariable Long id){
+//         Video video = this.videoService.findVideoById(id).getBody();
+//         String url = "https://localhost:8080/" + video.getUrl();
+//         return url;
+// } 
 
     // @GetMapping("/videos/{nombreDelVideo}")
     // public void getVideo(@PathVariable String nombreDelVideo, HttpServletResponse response)throws IOException{
