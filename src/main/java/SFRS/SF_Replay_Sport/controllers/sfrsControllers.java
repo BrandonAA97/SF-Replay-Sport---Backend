@@ -1,15 +1,11 @@
 package SFRS.SF_Replay_Sport.controllers;
 
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
-import org.apache.tomcat.util.http.fileupload.IOUtils;
+
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.core.format.InputAccessor;
 
 import SFRS.SF_Replay_Sport.models.Dtos.UsuarioDto;
 import SFRS.SF_Replay_Sport.models.Dtos.UsuarioRequest;
