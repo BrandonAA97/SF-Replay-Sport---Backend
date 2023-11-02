@@ -12,8 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-
-public class JwtEntryPoint  {
+@Component
+public class JwtEntryPoint implements AuthenticationEntryPoint  {
     
     private final static Logger logger = LoggerFactory.getLogger(JwtEntryPoint.class);
 
@@ -22,5 +22,6 @@ public class JwtEntryPoint  {
         logger.error("fail en el método commence");
         res.sendError(HttpServletResponse.SC_UNAUTHORIZED, "no autorizado");
     }
+    
 }
 

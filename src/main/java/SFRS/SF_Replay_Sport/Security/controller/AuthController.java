@@ -25,6 +25,7 @@ import SFRS.SF_Replay_Sport.Security.enums.RolNombre;
 import SFRS.SF_Replay_Sport.Security.jwt.JwtProvider;
 import SFRS.SF_Replay_Sport.Security.service.RolService;
 import SFRS.SF_Replay_Sport.Security.service.UsuarioService;
+import SFRS.SF_Replay_Sport.models.Dtos.Mensaje;
 import jakarta.validation.Valid;
 
 @RestController
