@@ -81,6 +81,12 @@ public class sfrsControllers {
     @ResponseStatus(HttpStatus.OK)
     public Video findVideoById(@PathVariable Long id){
          return this.videoService.findVideoById(id).getBody();
+    } 
+     
+    @GetMapping("/find/imagenes/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Video findImagenById(@PathVariable Long id){
+         return this.videoService.findVideoById(id).getBody();
 } 
 //     @GetMapping("/find/videosUrl/{id}")
 //     @ResponseStatus(HttpStatus.OK)
