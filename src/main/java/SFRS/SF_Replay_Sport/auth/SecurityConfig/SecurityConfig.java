@@ -30,8 +30,8 @@ public class SecurityConfig {
             .authorizeHttpRequests(authRequest ->
                 authRequest
                     .requestMatchers("/auth/**").permitAll()//todos los request con ruta /auth/ son publicos
-                    .requestMatchers("/auth/admin/*").hasAuthority("ADMINISTRADOR")//rutas para los admins
-                    .requestMatchers("/auth/user/*").hasAnyAuthority("USER", "ADMINISTRADOR")
+                    .requestMatchers("/api/v1/admin/**").hasAuthority("ADMINISTRADOR")//rutas para los admins
+                    .requestMatchers("/auth/user/**").hasAnyAuthority("USER", "ADMINISTRADOR")
                     .requestMatchers("/test/*").permitAll()//pruebas en postman
                     .anyRequest().authenticated())
             .sessionManagement(sessionManager ->
