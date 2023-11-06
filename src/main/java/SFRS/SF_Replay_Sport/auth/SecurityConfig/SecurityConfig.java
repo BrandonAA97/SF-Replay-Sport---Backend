@@ -10,7 +10,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import SFRS.SF_Replay_Sport.auth.Jwt.JwtAuthenticationFilter;
-import SFRS.SF_Replay_Sport.auth.User.Role;
 
 
 import lombok.RequiredArgsConstructor;
