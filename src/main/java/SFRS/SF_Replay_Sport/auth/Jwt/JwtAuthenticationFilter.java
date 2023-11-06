@@ -26,7 +26,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final UserDetailsService userDetailsService;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException{
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
+     FilterChain filterChain) throws ServletException, IOException{
 
         final String token = getTokenFromRequest(request);
         final String username;
@@ -34,7 +35,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
             return;
         }
-        username = JWTService.getUsernameFromToken(token);
+        username = jwtService.getUsernameFromToken(token);
 
         if(username != null && SecurityContextHolder.getContext().getAuthentication()==null){
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
@@ -47,13 +48,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 userDetails.getAuthorities());
         
                 authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().getAuthentication(authToken);
+                SecurityContextHolder.getContext().setAuthentication(authToken);
         }
     }
 
     //metodo que devuelve el token
     private String getTokenFromRequest(HttpServletRequest request){
-        final String authHeader = request.getHeader(HttpHandler.AUTHERIZATION);
+        final String authHeader = request.getHeader(HttpHandler.AUTHORIZATION);
 
         if (StringUtils.hasText(authHeader) && authHeader.startsWith("Bearer ")){
             return authHeader.substring(7); //Desde el septimo caracter empieza el token

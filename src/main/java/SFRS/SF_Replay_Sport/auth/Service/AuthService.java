@@ -45,11 +45,14 @@ public class AuthService {
             .role(Role.USER)
             .build();
         userRepository.save(user);
-
+      
         // emailService.sendEmailRegister(new Email(), registerRequest);
         // return AuthResponse.builder()
         //     .token(jwtService.getToken(user))
-        //     .build();
+        //     .build();  
+        return AuthResponse.builder()
+                .token(jwtService.getToken(user))
+                .build();
     }
     public AuthResponse registerAdmin(RegisterRequest registerRequest){
         User user = User.builder()
@@ -59,11 +62,15 @@ public class AuthService {
             .role(Role.ADMINISTRADOR)
             .build();
         userRepository.save(user);
+        
 
         // emailService.sendEmailRegister(new Email(), registerRequest);
 
         // return AuthResponse.builder()
         //     .token(jwtService.getToken(user))
         //     .build();
+        return AuthResponse.builder()
+                .token(jwtService.getToken(user))
+                .build();
         }
 }

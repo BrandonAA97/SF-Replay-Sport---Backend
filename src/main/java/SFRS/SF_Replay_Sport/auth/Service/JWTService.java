@@ -9,7 +9,6 @@ import java.util.function.Function;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import SFRS.SF_Replay_Sport.auth.User.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -32,7 +31,8 @@ public class JWTService {
             .builder()
             .claim("authorities", extraClaim.get("role"))
             .setClaims(extraClaim)
-            .setSubject(new Date(System.currentTimeMillis()))
+            .setSubject(userDetails.getUsername())
+            .setIssuedAt(new Date(System.currentTimeMillis()))
             .setExpiration(new Date(System.currentTimeMillis()+1000*60*24)) //1 dia
             .signWith(getKey(), SignatureAlgorithm.HS256)
             .compact();    
