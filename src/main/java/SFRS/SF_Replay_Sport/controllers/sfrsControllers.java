@@ -48,6 +48,21 @@ public class sfrsControllers {
     public Video findVideoById(@PathVariable Long id){
          return this.videoService.findVideoById(id).getBody();
     } 
+    @GetMapping("/find/imagenes/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Video findImagenById(@PathVariable Long id){
+         return this.videoService.findVideoById(id).getBody();
+} 
+//     @GetMapping("/find/videosUrl/{id}")
+//     @ResponseStatus(HttpStatus.OK)
+//     public String findUrlById(@PathVariable Long id){
+//         Video video = this.videoService.findVideoById(id).getBody();
+//         String url = "https://localhost:8080/" + video.getUrl();
+//         return url;
+// } 
 
+    // @GetMapping("/videos/{nombreDelVideo}")
+    // public void getVideo(@PathVariable String nombreDelVideo, HttpServletResponse response)throws IOException{
+    //      File videoFile = new File("file:///Users/lucas/OneDrive/Desktop/programacion/SF-ReplaySport-con-spingboot/videos/" + nombreDelVideo);
 }
 
