@@ -49,10 +49,6 @@ public class sfrsControllers {
          return this.videoService.findVideoById(id).getBody();
     } 
 
-    
-=======
-     
-
     @GetMapping("/find/imagenes/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Video findImagenById(@PathVariable Long id){
