@@ -31,7 +31,7 @@ public class SecurityConfig {
                 authRequest
                     .requestMatchers("/auth/**").permitAll()//todos los request con ruta /auth/ son publicos
                     .requestMatchers("/api/v1/admin/**").hasAuthority("ADMINISTRADOR")//rutas para los admins
-                    .requestMatchers("/auth/user/**").hasAnyAuthority("USER", "ADMINISTRADOR")
+                    .requestMatchers("/api/v1/user/**").hasAnyAuthority("USER", "ADMINISTRADOR")
                     .requestMatchers("/test/*").permitAll()//pruebas en postman
                     .anyRequest().authenticated())
             .sessionManagement(sessionManager ->
