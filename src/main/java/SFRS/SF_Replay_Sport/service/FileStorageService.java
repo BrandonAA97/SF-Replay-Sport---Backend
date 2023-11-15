@@ -17,7 +17,10 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileStorageService implements StorageService{
 
    //destino de videos e imagenes
+
     private String videosLocation = "C:\\Users\\lucas\\OneDrive\\Desktop\\programacion\\SF-ReplaySport-con-spingboot\\videos";
+    //private String videosLocation = "C:\\Users\\Albornoz.DESKTOP-TE9QN2H\\OneDrive\\Desktop\\Facu\\TUP-2-año\\proyecto-final-Full-Stack\\videos";
+    //private String imgsLocation = "C:\\Users\\Albornoz.DESKTOP-TE9QN2H\\OneDrive\\Desktop\\Facu\\TUP-2-año\\proyecto-final-Full-Stack\\imagenes";
     private String imgsLocation = "C:\\Users\\lucas\\OneDrive\\Desktop\\programacion\\SF-ReplaySport-con-spingboot\\imagenes";
     //variable para los destinos en el if
     private String Location="";
