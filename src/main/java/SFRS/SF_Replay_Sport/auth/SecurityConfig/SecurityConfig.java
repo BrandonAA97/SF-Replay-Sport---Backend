@@ -33,6 +33,9 @@ public class SecurityConfig {
                     .requestMatchers("/api/v1/admin/**").hasAuthority("ADMINISTRADOR")//rutas para los admins
                     .requestMatchers("/api/v1/user/**").hasAnyAuthority("USER", "ADMINISTRADOR")
                     .requestMatchers("/test/*").permitAll()//pruebas en postman
+                    .requestMatchers("/videos/**").permitAll()
+                    .requestMatchers("/imagenes/**").permitAll()
+                    .requestMatchers("/media/update/*").permitAll()
                     .anyRequest().authenticated())
             .sessionManagement(sessionManager ->
                 sessionManager

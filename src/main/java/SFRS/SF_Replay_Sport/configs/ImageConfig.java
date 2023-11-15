@@ -13,6 +13,6 @@ public class ImageConfig implements WebMvcConfigurer{
         registry.addResourceHandler("/imagenes/**")
         //Direccion absoluta de donde se van a guardar los videos
                 .addResourceLocations("file:///C:/Users/lucas/OneDrive/Desktop/programacion/SF-ReplaySport-con-spingboot/imagenes/");
-                //.addResourceLocations("file:///C:/Users/Albornoz.DESKTOP-TE9QN2H/OneDrive/Desktop/Facu/TUP-2-año/proyecto-final-Full-Stack/imagenes");
+               // .addResourceLocations("file:///C:/Users/Albornoz.DESKTOP-TE9QN2H/OneDrive/Desktop/Facu/TUP-2-año/proyecto-final-Full-Stack/imagenes");
     }
 }
