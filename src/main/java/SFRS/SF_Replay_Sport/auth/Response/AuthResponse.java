@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class AuthResponse { //respuesta que devuelve el token, no importa si el registro o login
     String token;
     @Enumerated(EnumType.STRING)
-
+    String role;
     String authorities;
     String username;
 }
